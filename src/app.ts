@@ -17,7 +17,12 @@ router
 	})
 	.get('/games', async (context) => {
 		//! const gamesResponse = await API.get("/games");
-		context.response.body = "random string";
+		const gamesResponse = await fetch("https://api-v3.igdb.com/games", {
+			headers: {
+				"user-key": "bb2aedca0775a449624cae062ea21d0f"
+			}
+		})
+		context.response.body = gamesResponse;
 	})
 
 const snelm = new Snelm("oak");
