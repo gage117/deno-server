@@ -5,15 +5,6 @@ import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import { Snelm } from "https://deno.land/x/snelm/mod.ts";
 import { IDs } from "./platform_IDs.ts";
 import { API } from "./api.ts";
-// import axiod from "https://deno.land/x/axiod/mod.ts";
-
-
-// const API = axiod.create({
-// 	baseURL: "https://api-v3.igdb.com/",
-// 	headers: {"user-key": "bb2aedca0775a449624cae062ea21d0f"}
-// });
-
-console.log(API)
 
 const organOption = (appConfig.DENO_ENV === 'production')
 	? 'tiny'
@@ -25,7 +16,7 @@ router
 		context.response.body = "Response, homie.";
 	})
 	.get('/games', async (context) => {
-		const gamesResponse = await API.get("/games");
+		//! const gamesResponse = await API.get("/games");
 		context.response.body = "random string";
 	})
 
